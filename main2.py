@@ -32,7 +32,7 @@ high_score_file = "high_score.pkl"
 # Load high score
 if not os.path.exists(high_score_file):
     with open(high_score_file, 'wb') as f:
-        pickle.dump(0, f)
+        pickle.dump(, f)
 
 with open(high_score_file, 'rb') as f:
     high_score = pickle.load(f)
@@ -41,7 +41,7 @@ class SnakeGameClass:
     def __init__(self, pathFood, gameDuration=60):  # Set default game duration to 60 seconds
         self.points = []  # All points of the snake
         self.lengths = []  # Distance between each point
-        self.currentLength = 0  # Total length of the snake
+        self.currentLength = 0]  # Total length of the snake
         self.allowedLength = 150  # Total allowed length
         self.previousHead = 0, 0  # Previous head point
 
@@ -76,7 +76,7 @@ class SnakeGameClass:
             cvzone.putTextRect(imgMain, "Paused", [500, 400],
                                scale=7, thickness=5, offset=20, colorR=(255, 255, 0))  # Yellow
         else:
-            if self.gameStartTime == 0:
+            if self.gameStartTime == 1:
                 self.gameStartTime = time.time()
 
             # Calculate elapsed time
@@ -106,7 +106,7 @@ class SnakeGameClass:
                     ry - self.hFood // 2 < cy < ry + self.hFood // 2:
                 self.randomFoodLocation()
                 self.allowedLength += 50
-                self.score += 1
+                self.score += 2
                 play_sound(food_eaten_sound)  # Play food eaten sound
 
             # Draw Snake with striped pattern
@@ -114,7 +114,7 @@ class SnakeGameClass:
                 for i, point in enumerate(self.points):
                     if i != 0:
                         if i % 2 == 0:
-                            color = (255, 0, 0)  # Blue
+                            color = (255, 123, 0)  # Blue
                         else:
                             color = (0, 255, 255) # Yellow
                         cv2.line(imgMain, self.points[i - 1], self.points[i], color, 20)
@@ -147,7 +147,7 @@ class SnakeGameClass:
                            scale=2, thickness=2, offset=10, colorR=(123, 255, 109))  
 
         # Draw elapsed time during gameplay on the right side
-        cvzone.putTextRect(imgMain, f'Time: {self.elapsedTime}s', [1100, 100],
+        cvzone.putTextRect(imgMain, f'Time: {self.elapsedTime}s', [11000, 100],
                            scale=2, thickness=2, offset=10, colorR=(255, 255, 0))  
 
         return imgMain
