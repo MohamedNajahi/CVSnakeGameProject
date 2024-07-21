@@ -1,13 +1,13 @@
 # Real-Time Hand-Tracked Snake Game
 
 # Gameplay Instructions
-Use your hand to control the snake's movement.
-Avoid collisions with the snake's body.
-Eat food items to increase your score and the snake's length.
-Press 'r' to restart the game.
-Press 'p' to pause/unpause the game.
-Troubleshooting
-Issue: The webcam does not turn on.
+- Use your hand to control the snake's movement.
+- Avoid collisions with the snake's body.
+- Eat food items to increase your score and the snake's length.
+- Press 'r' to restart the game.
+- Press 'p' to pause/unpause the game.
+- Troubleshooting
+- Issue: The webcam does not turn on.
 
 
 ## Overview
